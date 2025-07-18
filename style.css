@@ -1,0 +1,231 @@
+/* Base Styles */
+:root {
+    --primary: #2563eb;
+    --secondary: #1e40af;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --gray: #94a3b8;
+    --danger: #dc2626;
+    --success: #16a34a;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+/* Converter Card */
+.converter-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.temp-input {
+    width: 100%;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 1.1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.temp-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.temp-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--gray);
+}
+
+.conversion-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.convert-btn, .reset-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.convert-btn {
+    background: var(--primary);
+    color: white;
+    flex: 1;
+    justify-content: center;
+}
+
+.convert-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.reset-btn {
+    background: var(--danger);
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+}
+
+/* Conversion Table */
+.conversion-table {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.conversion-table h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--gray);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .conversion-buttons {
+        flex-direction: column;
+    }
+    
+    th, td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .temp-input {
+        padding: 0.8rem;
+        padding-right: 2.5rem;
+    }
+    
+    .temp-icon {
+        right: 0.8rem;
+    }
+}
